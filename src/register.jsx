@@ -7,7 +7,7 @@ export default function Register() {
   async function handleRegister(e) {
     e.preventDefault();
     try {
-      const response = await fetch("https://myazureapp.azurewebsites.net/api/register", {
+      const response = await fetch("https://elysian-ada3era9fnbhc2c9.canadacentral-01.azurewebsites.net/Login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
