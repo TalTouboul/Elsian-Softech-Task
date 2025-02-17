@@ -1,0 +1,135 @@
+@import "tailwindcss";
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #ffffff;
+  background-color: #5769D4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 16px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 0.8em;
+  font-weight: 400;
+  border-color: darkslateblue;
+  background-color: white;
+  color: darkslateblue;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: rgba(211, 211, 211, 0.411);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px auto -webkit-focus-ring-color;
+}
+
+button:disabled{
+  background-color: rgba(211, 211, 211, 0.411);
+  border-color: #454de842;
+  color: #454de842;
+}
+
+.purple-btn{
+  background-color:  #454de8;
+  color: white;
+  border-color:  #454de8;
+}
+
+.purple-btn:hover{
+  background-color: darkslateblue;
+  color: white;
+  border-color: darkslateblue;
+}
+
+.purple-btn:disabled{
+  background-color: rgba(71, 61, 139, 0.286);
+  color: rgba(255, 255, 255, 0.73);
+  border-color: rgba(71, 61, 139, 0.286);
+  outline: none;
+  cursor: not-allowed;
+}
+
+
+.password-btn {
+  border: 1px solid transparent;
+  border-color: transparent;
+  background-color: transparent;
+  color: gray;
+}
+.password-btn:hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.password-btn:focus,
+.password-btn:focus-visible {
+  outline: 0px auto -webkit-focus-ring-color;
+}
+
+input{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.2em 1.2em;
+  font-size: 0.8em;
+  font-weight: 400;
+  background-color: #ffff;
+  color: gray;
+  border-color: lightgrey;
+  transition: border-color 0.25s;
+  left: 16px;
+
+}
+
+input:focus{
+  border: 1px solid transparent;
+  border-color:#454de8;
+  outline: 2px solid #576ad441;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
