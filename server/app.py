@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 import os
 
-app = Flask(__name__, static_folder="src")
+app = Flask(__name__)
 
 # דוגמה לחיבור ל-Mongo
 mongo_uri = os.environ.get("MONGO_URI", "mongodb+srv://tal:<tubul1497>@elysian0softech0task.t83qi7t.mongodb.net/")
