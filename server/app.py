@@ -10,16 +10,18 @@ client = MongoClient(mongo_uri)
 db = client["elysian0softech0task"]
 
 @app.route("/", methods=["POST"])
-def login():
-    data = request.json
-    email = data.get("email")
-    password = data.get("password")
-
-    user = db.users.find_one({"email": email})
-    if not user or user["password"] != password:
-        return jsonify({"message": "Invalid credentials"}), 401
-
-    return jsonify({"message": "Login successful"}), 200
+def home():
+    return app.send_static_file("index.html")
+# def login():
+#     data = request.json
+#     email = data.get("email")
+#     password = data.get("password")
+#
+#     user = db.users.find_one({"email": email})
+#     if not user or user["password"] != password:
+#         return jsonify({"message": "Invalid credentials"}), 401
+#
+#     return jsonify({"message": "Login successful"}), 200
 
 @app.route("/register", methods=["POST"])
 def register():
