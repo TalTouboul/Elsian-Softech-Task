@@ -2,14 +2,14 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="src", static_url_path="/")
 
 # דוגמה לחיבור ל-Mongo
 mongo_uri = os.environ.get("MONGO_URI", "mongodb+srv://tal:<tubul1497>@elysian0softech0task.t83qi7t.mongodb.net/")
 client = MongoClient(mongo_uri)
 db = client["elysian0softech0task"]
 
-@app.route("/api/register", methods=["POST"])
+@app.route("/register", methods=["POST"])
 def register():
     data = request.json
     email = data.get("email")
