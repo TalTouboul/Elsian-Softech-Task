@@ -19,7 +19,7 @@ def register():
     db.users.insert_one({"email": email, "password": password})
     return jsonify({"message": "User created"}), 201
 
-@app.route("/api/login", methods=["POST"])
+@app.route("/", methods=["POST"])
 def login():
     data = request.json
     email = data.get("email")
