@@ -4,10 +4,6 @@ import os
 
 app = Flask(__name__)
 
-# דוגמה לחיבור ל-Mongo
-mongo_uri = os.environ.get("MONGO_URI", "mongodb+srv://tal:<tubul1497>@elysian0softech0task.t83qi7t.mongodb.net/")
-client = MongoClient(mongo_uri)
-db = client["elysian0softech0task"]
 
 @app.route("/", methods=["POST"])
 def home():
@@ -25,5 +21,5 @@ def home():
 
 
 
-if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+if __name__ == '__main__':
+   app.run()
