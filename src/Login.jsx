@@ -1,8 +1,35 @@
 import React from "react";
-
 import LoginForm from "./LoginForm";
 
-const Login = () => {
+
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    try {
+      
+      const response = await fetch("https://elysian-ada3era9fnbhc2c9.canadacentral-01.azurewebsites.net", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Login successful: " + data.message);
+        // אפשר לשמור טוקן/נתוני משתמש פה, או לנווט לעמוד אחר
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Network error");
+    }
+  }
+
   return (
     <div className="justify-center items-center">
       <div className="bg-white rounded-2xl shadow-2xl overflow-hidden h-full md:h-150 max-h-auto max-w-auto flex flex-col md:flex-row m-auto">
@@ -35,6 +62,5 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Login;

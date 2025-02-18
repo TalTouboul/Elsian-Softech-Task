@@ -7,13 +7,12 @@ export default function Register() {
   async function handleRegister(e) {
     e.preventDefault();
     try {
-      const response = await fetch("https://elysian-ada3era9fnbhc2c9.canadacentral-01.azurewebsites.net/Login", {
+      const response = await fetch("https://elysian-ada3era9fnbhc2c9.canadacentral-01.azurewebsites.net/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
-
       if (response.ok) {
         alert("User created successfully: " + data.message);
       } else {

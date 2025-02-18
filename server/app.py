@@ -9,16 +9,6 @@ mongo_uri = os.environ.get("MONGO_URI", "mongodb+srv://tal:<tubul1497>@elysian0s
 client = MongoClient(mongo_uri)
 db = client["elysian0softech0task"]
 
-@app.route("/register", methods=["POST"])
-def register():
-    data = request.json
-    email = data.get("email")
-    password = data.get("password")
-    # ועוד שדות לפי הצורך
-
-    db.users.insert_one({"email": email, "password": password})
-    return jsonify({"message": "User created"}), 201
-
 @app.route("/", methods=["POST"])
 def login():
     data = request.json
@@ -30,6 +20,16 @@ def login():
         return jsonify({"message": "Invalid credentials"}), 401
 
     return jsonify({"message": "Login successful"}), 200
+
+@app.route("/register", methods=["POST"])
+def register():
+    data = request.json
+    email = data.get("email")
+    password = data.get("password")
+    # ועוד שדות לפי הצורך
+
+    db.users.insert_one({"email": email, "password": password})
+    return jsonify({"message": "User created"}), 201
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
