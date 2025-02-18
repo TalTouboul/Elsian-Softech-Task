@@ -23,15 +23,7 @@ def home():
 #
 #     return jsonify({"message": "Login successful"}), 200
 
-@app.route("/register", methods=["POST"])
-def register():
-    data = request.json
-    email = data.get("email")
-    password = data.get("password")
-    # ועוד שדות לפי הצורך
 
-    db.users.insert_one({"email": email, "password": password})
-    return jsonify({"message": "User created"}), 201
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
